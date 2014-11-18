@@ -22,11 +22,13 @@ In __SomeClass.h__
 In __SomeClass.m__
 
 ```
--(id) init
-....
-_appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-_postmaster = [[Postmaster alloc] init];
-_contentCache = [_appDelegate contentCache];
+-(id) init {
+        _appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        _postmaster = [[Postmaster alloc] init];
+        _contentCache = [_appDelegate contentCache];
+        
+        return self
+}
 ```
 
 Example Usage
@@ -34,15 +36,15 @@ Example Usage
 ```
 dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0ul);
 			
-			dispatch_async(queue, ^{
+	dispatch_async(queue, ^{
 				
-				NSData *imageData = [_postmaster getAndReceive:[NSURL URLWithString:[cellData valueForKey:@"icon"]] packageData:nil cachable:YES];
+		NSData *imageData = [_postmaster getAndReceive:[NSURL URLWithString:[cellData valueForKey:@"icon"]] packageData:nil cachable:YES];
 				
-				dispatch_sync(dispatch_get_main_queue(), ^{
+		dispatch_sync(dispatch_get_main_queue(), ^{
 					
-					[contentsImage setImage:[UIImage imageWithData:imageData]];
+			[contentsImage setImage:[UIImage imageWithData:imageData]];
 					
-				});
+		});
 				
-			});
+});
 ```
