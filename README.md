@@ -12,7 +12,7 @@ _contentCache = [[NSCache alloc] init];
 In __SomeClass.h__
 
 ```
-#import "CPPostmaster.h"
+#import "Postmaster.h"
 ...
 @property (nonatomic) AppDelegate *appDelegate;
 @property (nonatomic) Postmaster *postmaster;
