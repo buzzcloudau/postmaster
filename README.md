@@ -1,7 +1,7 @@
 postmaster
 ==========
 
-in ~~Appdelegate.m~~
+in __Appdelegate.m__
 
 ```
 -(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -9,7 +9,7 @@ in ~~Appdelegate.m~~
 _contentCache = [[NSCache alloc] init];
 ```
 
-In ~~Class.h~~
+In __SomeClass.h__
 
 ```
 #import "CPPostmaster.h"
@@ -19,7 +19,7 @@ In ~~Class.h~~
 @property (nonatomic) NSCache *contentCache;
 ```
 
-In ~~Class.m~~
+In __SomeClass.m__
 
 ```
 -(id) init
