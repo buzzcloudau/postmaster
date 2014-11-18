@@ -1,11 +1,9 @@
 postmaster
 ==========
 
-in __Appdelegate.m__
+in __Appdelegate.m__ > application:didFinishLaunchingWithOptions:
 
 ```
--(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-...
 _contentCache = [[NSCache alloc] init];
 ```
 
@@ -23,11 +21,11 @@ In __SomeClass.m__
 
 ```
 -(id) init {
-        _appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-        _postmaster = [[Postmaster alloc] init];
-        _contentCache = [_appDelegate contentCache];
+	_appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+	_postmaster = [[Postmaster alloc] init];
+	_contentCache = [_appDelegate contentCache];
         
-        return self
+	return self
 }
 ```
 
